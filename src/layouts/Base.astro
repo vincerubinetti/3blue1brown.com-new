@@ -1,0 +1,58 @@
+---
+import Footer from "@/components/Footer/index.astro";
+import Header from "@/components/Header/index.astro";
+import "@/styles/theme.css";
+import "@/styles/global.css";
+
+const fonts = [
+  {
+    css: "sans",
+    fallback: "sans-serif",
+    name: "Lexend",
+    vars: ":wght@300..700",
+  },
+  {
+    css: "serif",
+    fallback: "serif",
+    name: "Besley",
+    vars: ":wght@400..700",
+  },
+  {
+    css: "mono",
+    fallback: "monospace",
+    name: "Noto Sans Mono",
+    vars: ":wght@400..700",
+  },
+];
+
+const fontParams = new URLSearchParams();
+fontParams.set("display", "swap");
+for (const { name, vars } of fonts) fontParams.append("family", name + vars);
+---
+
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href={`https://fonts.googleapis.com/css2?${fontParams}`}
+      rel="stylesheet"
+    />
+    <script define:vars={{ fonts }}>
+      /** set font variables */
+      for (const { css, name, fallback } of fonts)
+        document.documentElement.style.setProperty(
+          `--${css}`,
+          `"${name}", ${fallback}`,
+        );
+    </script>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

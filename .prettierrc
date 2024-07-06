@@ -1,11 +1,12 @@
 {
   "plugins": [
+    "prettier-plugin-astro",
     "@ianvs/prettier-plugin-sort-imports",
     "./node_modules/prettier-plugin-jsdoc/dist/index.js",
     "prettier-plugin-css-order"
   ],
   "importOrder": [
-    "^next",
+    "^@astro",
     "^react",
     "^[a-zA-Z]",
     "^@[a-zA-Z]",

@@ -11,6 +11,12 @@
   color: var(--white);
 }
 
+@media print {
+  .header {
+    display: none;
+  }
+}
+
 .title {
   display: flex;
   align-items: center;

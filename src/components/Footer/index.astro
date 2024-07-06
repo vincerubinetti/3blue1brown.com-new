@@ -1,0 +1,7 @@
+---
+import Component, { type Props as ComponentProps } from "./Component.tsx";
+
+type Props = ComponentProps;
+---
+
+<Component {...Astro.props} client:load />

@@ -1,5 +1,5 @@
-import Logo from "@/components/Logo";
-import classes from "./Header.module.css";
+import Logo from "@/components/Logo/Component.tsx";
+import classes from "./Component.module.css";
 
 const primary = [
   { to: "", text: "Link" },
@@ -11,6 +11,8 @@ const secondary = [
   { to: "", text: "Link" },
   { to: "", text: "Link" },
 ];
+
+export type Props = Record<string, never>;
 
 export default function Header() {
   return (

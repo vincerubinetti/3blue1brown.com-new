@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { useLocalStorage } from "react-use";
-import classes from "./Footer.module.css";
+import classes from "./Component.module.css";
+
+export type Props = Record<string, never>;
 
 export default function Footer() {
+  console.log("hi");
   return (
     <footer className={classes.footer}>
       © 2024 Grant Sanderson

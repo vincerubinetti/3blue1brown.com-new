@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { range } from "lodash";
 import { cos, sin } from "@/util/math";
-import styles from "./Logo.module.css";
+import styles from "./Component.module.css";
 
 // const blue = ["#03a9f4", "#0288d1", "#0277bd", "#01579b", "#000000"];
 // const brown = ["#855835", "#694229", "#5c3724", "#4a2a1b", "#000000"];
@@ -26,7 +26,7 @@ const r2 = 37.5;
 const r3 = 30;
 const r4 = 25;
 
-type Props = {
+export type Props = {
   className?: string;
 };
 
