@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "@/components/Footer/index.astro";
 import Header from "@/components/Header/index.astro";
 import "@/styles/theme.css";
@@ -32,13 +33,14 @@ for (const { name, vars } of fonts) fontParams.append("family", name + vars);
 
 <html lang="en">
   <head>
+    <ViewTransitions />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href={`https://fonts.googleapis.com/css2?${fontParams}`}
       rel="stylesheet"
     />
-    <script define:vars={{ fonts }}>
+    <script is:inline define:vars={{ fonts }}>
       /** set font variables */
       for (const { css, name, fallback } of fonts)
         document.documentElement.style.setProperty(
