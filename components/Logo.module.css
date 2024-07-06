@@ -1,0 +1,28 @@
+.dilate-outer {
+  animation: dilate-outer 2s ease forwards;
+}
+
+@keyframes dilate-outer {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dilate-inner {
+  animation: dilate-inner 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes dilate-inner {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

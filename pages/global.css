@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-weight: var(--regular);
+  line-height: var(--compact);
+  font-family: var(--sans);
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+section {
+  --width: var(--column);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px max(40px, (100% - var(--width)) / 2);
+  gap: 20px;
+}
+
+section > * {
+  max-width: 100%;
+}
+
+section:nth-child(even) {
+  background: var(--off-white);
+}
+
+section.narrow {
+  --width: calc(var(--column) / 2);
+}
+
+section.full {
+  --width: 999999px;
+}
+
+section:last-child {
+  flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  gap: 20px;
+  color: var(--off-black);
+  font-weight: var(--bold);
+}
+
+h1 {
+  justify-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6)::before,
+:is(h1, h2, h3, h4, h5, h6)::after {
+  flex-grow: 1;
+  height: 2px;
+  background: var(--light-gray);
+}
+
+hr {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  border: none;
+  background: var(--light-gray);
+}
+
+strong,
+b {
+  font-weight: var(--bold);
+}
+
+p {
+  margin: 0;
+  line-height: var(--spacing);
+  text-align: justify;
+}
+
+a {
+  color: var(--theme);
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+a:is(:hover, :focus) {
+  color: var(--theme-dark);
+}
+
+button {
+  display: flex;
+  appearance: none;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  gap: 10px;
+  border: none;
+  border-radius: var(--rounded);
+  background: var(--theme);
+  color: var(--white);
+  font: inherit;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+button:is(:hover, :focus) {
+  background: var(--theme-dark);
+}
+
+input:not([type="checkbox"]) {
+  appearance: none;
+  padding: 5px 10px;
+  border: solid 1px var(--gray);
+  border-radius: var(--rounded);
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  transition: border-color var(--transition);
+}
+
+input:is(:hover, :focus) {
+  border-color: var(--theme);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--theme);
+  cursor: pointer;
+}
+
+textarea {
+  appearance: none;
+  min-width: 100px;
+  max-width: 100%;
+  padding: 5px 10px;
+  border: solid 1px var(--gray);
+  border-radius: var(--rounded);
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  transition: border-color var(--transition);
+}
+
+textarea:is(:hover, :focus) {
+  border-color: var(--theme);
+}
+
+select {
+  appearance: none;
+  min-width: 100px;
+  max-width: 100%;
+  padding: 5px 30px 5px 10px;
+  border: none;
+  border-radius: var(--rounded);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 24 16'><path fill='none' stroke='black' stroke-width='5' opacity='0.25' d='M -10 -10 L 0 0 L 10 -10'/></svg>");
+  background-position: right 10px center;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-color: var(--light-gray);
+  color: var(--black);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+select:is(:hover, :focus) {
+  background-color: var(--gray);
+}
+
+blockquote {
+  margin: 20px;
+  padding-left: 20px;
+  border-left: solid 2px var(--gray);
+  color: var(--dark-gray);
+  line-height: var(--spacing);
+  font-family: var(--serif);
+  text-align: justify;
+}
+
+code {
+  margin: 20px 0;
+  padding: 10px 20px;
+  overflow-x: auto;
+  border-radius: var(--rounded);
+  background: var(--dark-gray);
+  color: var(--white);
+  font-family: var(--mono);
+  white-space: pre;
+}
+
+:focus {
+  outline-offset: 3px !important;
+}

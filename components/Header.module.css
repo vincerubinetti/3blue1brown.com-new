@@ -1,0 +1,123 @@
+.header {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  overflow: hidden;
+  gap: 20px;
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 1.8rem;
+  font-family: var(--serif);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+.title span {
+  animation: stroke-text 1s both ease-in-out;
+}
+
+@keyframes stroke-text {
+  from {
+    opacity: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+.nav a {
+  padding: 5px 10px;
+  color: var(--white);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav a:is(:hover, :focus) {
+  color: var(--theme);
+}
+
+@media (max-width: 800px) {
+  .header {
+    justify-content: center;
+  }
+
+  .title {
+    order: -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+}
+
+.background {
+  display: flex;
+  z-index: -1;
+  position: absolute;
+  align-items: center;
+  inset: 0;
+  overflow: hidden;
+  background: var(--black);
+}
+
+.svg {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  animation: rotate-grid 120s linear infinite;
+  opacity: 0.25;
+}
+
+.line {
+  stroke-dasharray: 1 1;
+  animation: draw-line 15s ease-in-out both infinite;
+}
+
+@keyframes rotate-grid {
+  0% {
+    transform: perspective(1000px) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    stroke-dashoffset: 3;
+  }
+  30% {
+    stroke-dashoffset: 2;
+  }
+  70% {
+    stroke-dashoffset: 2;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}

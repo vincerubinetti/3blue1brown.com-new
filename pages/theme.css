@@ -1,0 +1,49 @@
+/* https://tailwindcss.com/docs/customizing-colors */
+
+[data-dark="false"] {
+  --theme: #3b82f6;
+  --theme-light: #bfdbfe;
+  --theme-dark: #1e40af;
+
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --light-gray: #e2e8f0;
+  --gray: #94a3b8;
+  --dark-gray: #1e293b;
+  --off-black: #0f172a;
+  --black: #000000;
+
+  --overlay: #00000040;
+}
+
+[data-dark="true"] {
+  --theme: #3b82f6;
+  --theme-light: #1e40af;
+  --theme-dark: #bfdbfe;
+
+  --white: #000000;
+  --off-white: #0f172a;
+  --light-gray: #1e293b;
+  --gray: #475569;
+  --dark-gray: #e2e8f0;
+  --off-black: #f8fafc;
+  --black: #ffffff;
+
+  --overlay: #ffffff20;
+}
+
+:root {
+  /** sizes */
+  --column: 1000px;
+
+  /* text */
+  --regular: 300;
+  --bold: 500;
+  --spacing: 2;
+  --compact: 1.5;
+
+  /** effects */
+  --rounded: 3px;
+  --shadow: 0 0 20px var(--overlay);
+  --transition: 0.1s ease-in-out;
+}
