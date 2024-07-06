@@ -11,7 +11,8 @@
     "^@[a-zA-Z]",
     "^@/",
     "^./",
-    "^../"
+    "^../",
+    "~"
   ],
   "jsdocCapitalizeDescription": false,
   "cssDeclarationSorterOrder": "smacss"

@@ -1,11 +1,8 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Base from "@/layouts/Base";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-
+    <Base>
       <main>
         <section>
           <h1>Hello World</h1>
@@ -114,14 +111,12 @@ export default function Home() {
           </blockquote>
 
           <code>
-            console.log("Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.");
+            {`
+              console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+            `}
           </code>
         </section>
       </main>
-
-      <Footer />
-    </>
+    </Base>
   );
 }

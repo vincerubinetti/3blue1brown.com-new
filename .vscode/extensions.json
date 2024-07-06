@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "unifiedjs.vscode-mdx",
+    "yoavbls.pretty-ts-errors",
+    "Tyriar.sort-lines",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
